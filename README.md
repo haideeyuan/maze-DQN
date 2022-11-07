@@ -1,2 +1,30 @@
 # maze-DQN
-A DQN program to find the way out maze with the minimum steps.
+A DQN program to find the way out maze with the minimum steps.  
+这是一个应用DQN找迷宫出口的程序，最优解是最少的步数。
+
+SCENE定义迷宫：0表示可以走的路，1表示墙。
+
+默认用例：  
+```
+0 0 1 1   
+0 0 0 1  
+1 1 0 0  
+1 1 0 0  
+```
+最终输出方案：
+```
+>>>>>>>>> take_action >>>>>>>>>>> 0 1 4 0
+>>>>>>>>> take_action >>>>>>>>>>> 4 3 5 0
+>>>>>>>>> take_action >>>>>>>>>>> 5 3 6 0
+>>>>>>>>> take_action >>>>>>>>>>> 6 1 10 0
+>>>>>>>>> take_action >>>>>>>>>>> 10 1 14 0
+>>>>>>>>> take_action >>>>>>>>>>> 14 3 15 1
+```
+其中，每行第一个数字代表当前state位置（位置是第一行第一列记为0，依次向右为1，2，3...，再继续数下一行，本例如下），第二个数字代表action（0：向上移动一步；1：下；2：左；3：右），第三个数字代表执行action后的state位置，最后一个数字代表是否走出迷宫（0代表没走出迷宫，1代表走出迷宫）。  
+state标记方式如下：  
+```
+0  1  2  3
+4  5  6  7
+8  9  10 11
+12 13 14 15
+```
